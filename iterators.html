@@ -1244,7 +1244,7 @@ class _ForkPrefetchIterator(CheckpointableIterator):
             import logging
             logger = logging.getLogger(__name__)
             if self._local_queue.empty():
-                logger.warning(&#34;trying to fetch item, but local queue is empty&#34;)
+                logger.warning(&#34;trying to fetch item, but prefetch buffer is empty&#34;)
         msg = self._local_queue.get()
         if isinstance(msg, StopIteration):
             self._terminate_and_join_queue_fetcher_thread()
